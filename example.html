@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+    <head>
+        <link href="css/harvest-font.css" rel="stylesheet">
+        <style>
+            body {
+                font-family: georgia, serif;
+            }
+
+            .pull-left {
+                float: left;
+                margin-right: 20px;
+            }
+
+            hr {
+                clear: both;
+                border: 0;
+                background: #ccc;
+                height: 1px;
+            }
+
+            .heading {
+                text-decoration: underline;
+                font-weight: normal;
+            }
+
+            img {
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+
+            .harvest-wheat {
+                height: 64px;
+                width: 64px;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            table th {
+                text-align: left;
+            }
+
+            table td {
+                border: 1px solid white;
+                min-width: 100px;
+                padding: 5px 20px 5px 0;
+            }
+
+            table .color {
+                width: 100px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1 class=heading>Colors</h1>
+
+        <table>
+            <tr>
+                <th>Element(s)</th>
+                <th>Color (hex)</th>
+                <th>Color (hsla)</th>
+                <th>Preview</th>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>#333333</td>
+                <td>-</td>
+                <td style="background: #333333"></td>
+            </tr>
+            <tr>
+                <td>h1, h2</td>
+                <td>#ee9934</td>
+                <td>-</td>
+                <td style="background: #ee9934"></td>
+            </tr>
+            <tr>
+                <td>h1, h2 (alt)</td>
+                <td>#277097</td>
+                <td>-</td>
+                <td style="background: #277097"></td>
+            </tr>
+            <tr>
+                <td>header/footer background</td>
+                <td>#f6f3ee</td>
+                <td>hsla(42, 32%, 51%, 0.1)</td>
+                <td style="background: #f6f3ee"></td>
+            </tr>
+            <tr>
+                <td>header/footer border</td>
+                <td>#e1dcd0</td>
+                <td>-</td>
+                <td style="background: #e1dcd0"></td>
+            </tr>
+            <tr>
+                <td>section background</td>
+                <td>#e5eff4</td>
+                <td>hsla(200, 100%, 30%, 0.1)</td>
+                <td style="background: #e5eff4"></td>
+            </tr>
+            <tr>
+                <td>section border</td>
+                <td>#bdd1dc</td>
+                <td>-</td>
+                <td style="background: #bdd1dc"></td>
+            </tr>
+        </table>
+
+        <h1 class=heading>Font Icons</h1>
+
+        <div class=pull-left>
+            <h1><i class=harvest-icon-wheat></i> Harvest</h1>
+            <h2><i class=harvest-icon-wheat></i> Harvest</h2>
+            <h3><i class=harvest-icon-wheat></i> Harvest</h3>
+            <h4><i class=harvest-icon-wheat></i> Harvest</h4>
+            <h5><i class=harvest-icon-wheat></i> Harvest</h5>
+            <h6><i class=harvest-icon-wheat></i> Harvest</h6>
+        </div>
+
+        <div class=pull-left>
+            <h1><i class=harvest-icon-5grain></i> Harvest</h1>
+            <h2><i class=harvest-icon-5grain></i> Harvest</h2>
+            <h3><i class=harvest-icon-5grain></i> Harvest</h3>
+            <h4><i class=harvest-icon-5grain></i> Harvest</h4>
+            <h5><i class=harvest-icon-5grain></i> Harvest</h5>
+            <h6><i class=harvest-icon-5grain></i> Harvest</h6>
+        </div>
+
+        <div class=pull-left>
+            <h1><i class=harvest-icon-3grain></i> Harvest</h1>
+            <h2><i class=harvest-icon-3grain></i> Harvest</h2>
+            <h3><i class=harvest-icon-3grain></i> Harvest</h3>
+            <h4><i class=harvest-icon-3grain></i> Harvest</h4>
+            <h5><i class=harvest-icon-3grain></i> Harvest</h5>
+            <h6><i class=harvest-icon-3grain></i> Harvest</h6>
+        </div>
+
+        <hr>
+
+        <h1 class=heading>Images (SVG)</h1>
+
+        <img width=128 src="img/wheat.svg" title=128>
+        <img width=64 src="img/wheat.svg" title=64>
+        <img width=32 src="img/wheat.svg" title=32>
+        <img width=16 src="img/wheat.svg" title=16>
+
+        <img width=128 src="img/5grain.svg" title=128>
+        <img width=64 src="img/5grain.svg" title=64>
+        <img width=32 src="img/5grain.svg" title=32>
+        <img width=16 src="img/5grain.svg" title=16>
+
+        <img width=128 src="img/3grain.svg" title=128>
+        <img width=64 src="img/3grain.svg" title=64>
+        <img width=32 src="img/3grain.svg" title=32>
+        <img width=16 src="img/3grain.svg" title=16>
+
+        <p>Internet Explorer 8 is the last browser that doesn't support SVG images and backgrounds, so unless support is required, there is no need for PNGs as various sizes. The other advantage of using SVGs is the auto-scaling for high DPI displays (e.g. retina).</p>
+
+        <p>If support is required, the following trick can be used for background images to fallback to PNGs:</p>
+
+<pre>
+.harvest-wheat {
+    background: transparent url(img/wheat-128.png) no-repeat;
+    background-image: url(img/wheat.svg), none;
+    background-size: contain;
+    height: 128px;
+    width: 128px;
+}
+</pre>
+        <p>This uses the PNG by default and then specifies a background-image with the SVG and a second empty one. Browsers which support SVG also support multiple background images. IE8 will not recognize the multiple background image syntax and stick with the PNG.</p>
+
+        <p>For <code>img</code> support and other information, see <a href="http://css-tricks.com/using-svg/">this article</a>.</p>
+    </body>
+</html>
