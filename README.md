@@ -1,5 +1,5 @@
 # Harvest Assets
 
-This contains the Harvest-specific assets including logo images and fonts as well as a list of colors used by the Harvest site.
+This repository contains the assets for the [Harvest website](http://harvest.research.chop.edu) including logos, fonts, and colors.
 
 Open `index.html` for a preview or go to http://assets.harvest.io
